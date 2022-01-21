@@ -15,6 +15,7 @@ const chuck = {
       );
     },
     getAge: function() {
+      return (Math.floor((new Date()-this.birthDate)/1000/60/60/24/365))
       // TODO: return the age in this function
       // Hint: to get the current time, you can do: new Date()
       // Hint: to get the birthDate, you can do: this.birthDate
@@ -22,14 +23,18 @@ const chuck = {
       // Hint: convert the milliseconds to years 
     },
     addFriend: function(name) {
+      this.friends.push(name)
       // TODO (don't use return statement)
       // add a name to the friends array. The friend name is passed as a parameter to the function
     },
     getRandomFriend: function() {
+      return this.friends[(Math.random*100)/100*(this.friends.length)]
       // TODO. return a random friend name from the friends array
     }
   };
   
+  console.log("new date con fecha",new Date('1940-03-10'))
+  console.log("new date sin fecha",new Date())
   chuck.displayInfo();
   
   console.log('getAge', chuck.getAge()); // Should return 81 if you are in 2021
